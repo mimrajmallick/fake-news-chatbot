@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>📰 AI-Powered Fake News Detection</h2>
+        <form method="POST" action="/predict">
+            <textarea name="news" placeholder="Enter news text here..." required></textarea><br>
+            <button type="submit">Check</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            <strong>Prediction:</strong> {{ prediction }} <br>
+            <strong>Input:</strong> {{ input_text }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
